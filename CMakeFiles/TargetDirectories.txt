@@ -1,0 +1,3 @@
+C:/Gelis/Programs/Waves/CMakeFiles/Test.dir
+C:/Gelis/Programs/Waves/CMakeFiles/edit_cache.dir
+C:/Gelis/Programs/Waves/CMakeFiles/rebuild_cache.dir

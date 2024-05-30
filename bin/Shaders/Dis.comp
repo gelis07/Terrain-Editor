@@ -1,0 +1,25 @@
+#version 430 core
+
+
+layout (local_size_x = 32, local_size_y = 1, local_size_z = 1) in;
+// layout (rgba32f, binding = 0) uniform image2D imgInput;
+struct Vertex {
+    float position[3];
+    float texCoords[2];
+    float normal[3];
+    float tangent[3];
+    float bitangent[3];
+};
+layout (std430, binding = 1) buffer InputData{
+    Vertex data[];
+} Vertices;
+
+uniform sampler2D dis;
+uniform float weight;
+
+void main()
+{
+    uvec2 index2D = gl_GlobalInvocationID.xy;
+    uint index = index2D.y * gl_WorkGroupSize.x + index2D.x;
+    Vertices.data[index].position[2] = texture(dis, vec2(Vertices.data[index].texCoords[0], Vertices.data[index].texCoords[1])).r * weight; 
+}
