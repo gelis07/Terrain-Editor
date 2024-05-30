@@ -176,10 +176,10 @@ int main()
     Shader shader("shader.vs", "shader.fs");
     Shader comp("Dis.comp");
 
-    GLuint texture = LoadTexture("WaterAlb.jpg");
-    GLuint NormalMap = LoadTexture("WaterNorm.jpg");
+    GLuint texture = LoadTexture("Assets/WaterAlb.jpg");
+    GLuint NormalMap = LoadTexture("Assets/WaterNorm.jpg");
     int Hwidth,Hheight;
-    GLuint Test = LoadTexture("Mountains.jpg", &Hwidth, &Hheight);
+    GLuint Test = LoadTexture("Assets/Mountains.jpg", &Hwidth, &Hheight);
     
     GLuint textureHdr;
     int TEXTURE_WIDTH, TEXTURE_HEIGHT;
